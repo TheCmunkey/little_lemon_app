@@ -4,13 +4,18 @@ export default function About()
 {
 
 	return (
-		<Box
-		w='100%'
-		h='auto'
-		backgroundColor="#F4CE14">
+		<Box className="about">
+		<Box className="about-div">
 
-			ABOUT
+			<Box className="about-div-1">
+			<img src={require("../assets/herofood.jpg")} alt="food"></img>
+			</Box>
 
+			<Box className="about-div-2">
+			<img className="hero-img" src={require("../assets/herofood.jpg")} alt="food"></img>
+			</Box>
+
+		</Box>
 		</Box>
 	);
 

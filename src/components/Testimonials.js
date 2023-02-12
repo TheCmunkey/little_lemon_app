@@ -1,4 +1,4 @@
-import { Box } from "@chakra-ui/react";
+import { Box,Center,Text } from "@chakra-ui/react";
 
 export default function Testimonials()
 {
@@ -8,7 +8,7 @@ export default function Testimonials()
 		h='auto'
 		backgroundColor="#FFFFFF">
 
-			TESTIMONIALS
+			<Center><Text className="fnt-2">TESTIMONIALS</Text></Center>
 
 		</Box>
 	);
