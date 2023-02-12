@@ -3,7 +3,7 @@ import { ChakraProvider } from "@chakra-ui/react";
 import './App.css';
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-// // import Routing from "./components/Routing";
+import Routing from "./components/Routing";
 
 function App()
 {
@@ -11,7 +11,7 @@ function App()
 
 		<ChakraProvider>
 		<Navigation/>
-		{/* <Routing/> */}
+		<Routing/>
 		<Footer/>
 		</ChakraProvider>
 
@@ -19,7 +19,3 @@ function App()
 }
 
 export default App;
-{/* <Hero/>
-			<Highlights/>
-			<Testimonials/>
-			<About/> */}
