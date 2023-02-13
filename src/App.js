@@ -1,20 +1,19 @@
-
-import { ChakraProvider } from "@chakra-ui/react";
-import './App.css';
+import Routing from "./components/Routing";
 import Navigation from "./components/Navigation";
 import Footer from "./components/Footer";
-import Routing from "./components/Routing";
+import './App.css';
+
+// import TestDump from "./components/TestDump";
 
 function App()
 {
 	return (
-
-		<ChakraProvider>
+		<>
 		<Navigation/>
 		<Routing/>
 		<Footer/>
-		</ChakraProvider>
-
+		{/* <TestDump/> */}
+		</>
 	);
 }
 

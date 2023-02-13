@@ -1,15 +1,24 @@
-import { Box,Center,Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import TestimonialsWidget from "../components/TestimonialsWidget";
 
 export default function Testimonials()
 {
 	return (
-		<Box
-		w='100%'
-		h='auto'
-		backgroundColor="#FFFFFF">
+		<Box className="testimonials">
+			<Box className="testimonials-div">
 
-			<Center><Text className="fnt-2">TESTIMONIALS</Text></Center>
+				<Box className="testimonials-div-top">
+			 	 	<Text>TESTIMONIALS</Text>
+				</Box>
 
+				<Box ><TestimonialsWidget name="Bill"/></Box>
+				<Box ><TestimonialsWidget name="Susan"/></Box>
+				<Box ><TestimonialsWidget name="John"/></Box>
+				<Box ><TestimonialsWidget name="Jessica"/></Box>
+				<Box ><TestimonialsWidget name="Susan"/></Box>
+				<Box ><TestimonialsWidget name="John"/></Box>
+
+			</Box>
 		</Box>
 	);
 };

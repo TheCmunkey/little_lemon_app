@@ -10,8 +10,8 @@ export default function Home()
       <main>
         <Hero/>
         <Specials/>
-		<Testimonials/>
-		<About/>
+		    <Testimonials/>
+	 	    <About/>
       </main>
     </>
   );
