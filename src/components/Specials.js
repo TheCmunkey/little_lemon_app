@@ -24,7 +24,15 @@ export default function Specials()
 			</Box>
 
 			<Box className="specials-div-1">
-			<SpecialsWidget name="Fish" price="$8.99" img_resource={require("../assets/herofood.jpg")} />
+			<SpecialsWidget name="FishFisishFisshFFishFishFishFishFishFishFish" price="$8.99" img_resource={require("../assets/herofood.jpg")} />
+			</Box>
+
+			<Box className="specials-div-1">
+			<SpecialsWidget name="Chicken" price="$14.99" img_resource={require("../assets/herofood.jpg")} />
+			</Box>
+
+			<Box className="specials-div-1">
+			<SpecialsWidget name="Chicken" price="$14.99" img_resource={require("../assets/herofood.jpg")} />
 			</Box>
 
 			<Box className="specials-div-1">
