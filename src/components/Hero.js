@@ -4,7 +4,7 @@ export default function Hero()
 {
 	return (
 		<Box className="hero">
-			<Box className="hero-div">
+
 			<Box className="hero-div-1">
 			<Text className="fnt-1">Little Lemon</Text>
 			<Text className="fnt-2">Chicago</Text>
@@ -17,7 +17,7 @@ export default function Hero()
 			<Box className="hero-div-2">
 			<img className="hero-img" src={require("../assets/herofood.jpg")} alt="food"></img>
 			</Box>
-			</Box>
+
 		</Box>
 	);
 };

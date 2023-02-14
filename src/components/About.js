@@ -8,7 +8,7 @@ export default function About()
 		<Box className="about-div">
 
 			<Box className="about-div-1">
-			<img src={require("../assets/herofood.jpg")} alt="food"></img>
+			<img className="hero-img" src={require("../assets/herofood.jpg")} alt="food"></img>
 			</Box>
 
 			<Box className="about-div-2">
