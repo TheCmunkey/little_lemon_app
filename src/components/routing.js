@@ -1,24 +1,35 @@
 
 import { Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
+import HomePage   from "../pages/HomePage";
+import AboutPage from "../pages/AboutPage";
+import MenuPage from "../pages/MenuPage";
+import ReservationsPage   from "../pages/ReservationsPage";
+import OrderPage from "../pages/OrderPage";
+import LoginPage from "../pages/LoginPage";
+import NoPage from "../pages/NoPage";
 
-// import About from "./pages/About";
-// import Reservation from "./pages/BookingPage";
-// import Order from "./pages/Order";
-// import Login from "./pages/Login";
-// import Confirmation from "./pages/Confirmation";
+import ConfirmPage from "../pages/ConfirmPage";
 
 export default function Routing() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
 
-      {/* <Route path="/about" element={<About />} />
-      <Route path="/reservations" element={<Reservations/>} />
-      <Route path="/order" element={<Order />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/confirmation" element={<Confirmation />} /> */}
+    <Routes>
+
+          <Route path="/"      element={<HomePage />} exact/>
+          <Route path="index"  element={<HomePage />} exact/>
+          <Route path="/home"  element={<HomePage />} exact/>
+
+          <Route path="/about" element={<AboutPage />} exact/>
+          <Route path="/menu" element={<MenuPage />}   exact/>
+          <Route path="/reservations" element={<ReservationsPage/>} exact/>
+          <Route path="/order" element={<OrderPage />}     exact/>
+          <Route path="/login" element={<LoginPage />}     exact/>
+          <Route path="/confirm" element={<ConfirmPage />} exact/>
+
+          <Route path="*"  element={<NoPage />} exact/>
+
     </Routes>
+
   );
 }
 

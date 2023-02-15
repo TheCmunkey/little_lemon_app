@@ -1,7 +1,6 @@
-import { Box, Text, Link,HStack } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
+import { Link } from "react-router-dom";
 import SpecialsWidget from "../components/SpecialsWidget";
-
-const bfile="../assets/herofood.jpg";
 
 export default function Specials()
 {
@@ -11,8 +10,7 @@ export default function Specials()
 		<Box className="specials-div">
 
 		    <Box className="specials-div-top">
-			<Text className="fnt-1" Style="display:inline;color:black;white-space: nowrap;">This weeks specials!</Text>
-			<Link  className="online_menu_button fnt-2" to="/" >Online Menu</Link>
+			<Text className="specials-logo-name fnt-2 " >🙞 THIS WEEKS SPECIALS 🙜</Text>
 			</Box>
 
 			<Box className="specials-div-1">
@@ -24,13 +22,13 @@ export default function Specials()
 			</Box>
 
 			<Box className="specials-div-1">
-			<SpecialsWidget name="Fish" price="$8.99" img_resource={require("../assets/herofood.jpg")} />
+			<SpecialsWidget name="FishFisishFisshFFishFishFishFishFishFishFish" price="$8.99" img_resource={require("../assets/herofood.jpg")} />
 			</Box>
 
-			<Box className="specials-div-1">
-			<SpecialsWidget name="Chicken" price="$14.99" img_resource={require("../assets/herofood.jpg")} />
+			<Box className="specials-div-bot">
+			<Link className="button-yellow fnt-2" to="/menu" >Checkout our Menu</Link>
 			</Box>
-
+	
 		</Box>
 	</Box>
 	);
