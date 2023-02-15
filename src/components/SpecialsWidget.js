@@ -7,7 +7,7 @@ export default function SpecialsWidget(props)
 
 		<Box className="specials-inner">
 
-		<img class="specials-img" src={props.img_resource} alt='Special' />
+		<img className="specials-img" src={props.img_resource} alt='Special' />
 		<Text px="0.2rem" className="fnt-3">{props.name}</Text>
 		<Text px="0.2rem" className="fnt-3">{props.img}</Text>
 		<Text px="0.3rem" className="fnt-B">-</Text>

@@ -1,11 +1,11 @@
-import { Box, Link } from "@chakra-ui/react";
+// import { Box, Link } from "@chakra-ui/react";
 
 export default function TestDump()
 {
 	return (
 
 		<test className="test">
-			FUCK
+			This is a Test 123...
 			{/* <Box className="nav-bar">
 				<Link to="/">
 					<img

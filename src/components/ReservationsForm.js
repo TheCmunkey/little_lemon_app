@@ -1,12 +1,9 @@
 import { useState } from "react";
-
 import { Box, Text } from "@chakra-ui/react";
 import {  Link } from "react-router-dom";
 
-const scrollToTop = () =>
-{
-      window.scrollTo(0,0);
-}
+import { submitReservationAPI } from "../code/ReservationsCode";
+import { uKey } from "../code/Utilities";
 
 export default function ReservationForm(props)
 {
@@ -16,25 +13,28 @@ export default function ReservationForm(props)
     const [telNumber, settelNumber] = useState("");
     const [guests, setguests] = useState(1);
     const [date, setDate] = useState("");
+	  const [time, setTime] = useState("11:00");
     const [occasion, setOccasion] = useState("");
-    const [preferences, setPreferences] = useState("");
-    const [comments, setComments] = useState("");
 
-// 	const [finalTime, setFinalTime] = useState(
-// 		props.availableTimes.map((times) => <option>{times}</option>)
-// 	);
- 
+ 	const [finalTime, setFinalTime] = useState( props.availableTimes.map((times) => <option key={uKey()} >{times}</option>));
 
- 	function handleDateChange(e)
+	function onChangeDate(e)
  	{
- 		  setDate(e.target.value);
+		console.log(e.target.value);
+		setDate(e.target.value);
 
-// 		var stringify = e.target.value;
-// 		const date = new Date(stringify);
+		var stringify = e.target.value;
+		const date = new Date(stringify);
 
-// 		props.updateTimes(date);
+		props.updateTimes(date);
 
-// 		setFinalTime(props.availableTimes.map((times) => <option>{times}</option>));
+		setFinalTime(props.availableTimes.map((times) => <option>{times}</option>));
+  }
+
+  const submitReservation = () =>
+  {
+    submitReservationAPI();
+    window.scrollTo(0,0);
   }
 
   return (
@@ -43,9 +43,14 @@ export default function ReservationForm(props)
     <form className="reservation-form-container">
 
       <Box className="rf-col-all">
-      <Text>Fill out the form below you idiot.</Text>
+        <br></br>
+        <Text className="specials-logo-name fnt-2 " >🙞 RESERVATION FORM 🙜</Text>
+        <Text className="fnt-2">Fill out the information below.</Text>
+        <br></br>
+        <hr></hr>
+        <br></br>
       </Box>
-
+      
       <Box className="rf-col-1">
       <label className="fnt-2" htmlFor="firstName">First Name</label>
       </Box>
@@ -55,10 +60,10 @@ export default function ReservationForm(props)
           type="text"
           id="firstName"
           placeholder="First Name"
-          required
           minLength={2}
           maxLength={50}
           value={firstName}
+          required
           onChange={(e) => setfirstName(e.target.value)}
         ></input>
       </Box>
@@ -75,6 +80,7 @@ export default function ReservationForm(props)
           minLength={2}
           maxLength={50}
           value={lastName}
+          required
           onChange={(e) => setlastName(e.target.value)}
         ></input>
       </Box>
@@ -97,7 +103,7 @@ export default function ReservationForm(props)
       </Box>
 
       <Box className="rf-col-1">
-        <label className="fnt-2" htmlFor="telNumber">Phone Number</label>
+        <label className="fnt-2" htmlFor="telNumber">Phone </label>
       </Box>
       <Box className="rf-col-2">
         <input
@@ -106,15 +112,48 @@ export default function ReservationForm(props)
           id="telNumber"
           placeholder="(xxx)-xxx-xxxx"
           value={telNumber}
-          required
           minLength={10}
           maxLength={25}
           onChange={(e) => settelNumber(e.target.value)}
         ></input>
       </Box>
 
+{/* /////////////////////////////SET DATE */}
+
       <Box className="rf-col-1">
-        <label className="fnt-2" htmlFor="guests">Number of Guests</label>
+        <label className="fnt-2" htmlFor="date">Date</label>
+      </Box>
+      <Box className="rf-col-2">
+			<input
+				className="fnt-2"
+				type="date"
+				id="date"
+				required
+				value={date}
+        onChange={onChangeDate}
+			></input>
+      </Box>
+
+{/* ////////////////////////// SET TIME */}
+
+      <Box className="rf-col-1">
+       	<label className="fnt-2" htmlFor="time">Select Time</label>
+      </Box>
+      <Box className="rf-col-2">
+        	<select
+				className="fnt-2"
+				id="time"
+				required
+				value={time}
+				onChange={(e) => setTime(e.target.value)}
+			>
+				{finalTime}
+			</select>
+      </Box>
+
+
+		<Box className="rf-col-1">
+        <label className="fnt-2" htmlFor="guests">Guests</label>
       </Box>
       <Box className="rf-col-2">
         <input
@@ -130,78 +169,35 @@ export default function ReservationForm(props)
         ></input>
       </Box>
 
+
       <Box className="rf-col-1">
-        <label className="fnt-2" htmlFor="date">Date</label>
+        <label className="fnt-2"htmlFor="occasion">Occasion</label>
       </Box>
       <Box className="rf-col-2">
-        <input
-          className="fnt-2"
-          type="date"
-          id="date"
-          required
-          value={date}
-          onChange={handleDateChange}
-        ></input>
+			<select
+				id="occasion"
+				className="fnt-2"
+				value={occasion}
+				onChange={(e) => setOccasion(e.target.value)}
+			>
+				<option key={uKey()} >None</option>
+				<option key={uKey()}>Birthday</option>
+				<option key={uKey()}>Anniversary</option>
+				<option key={uKey()}>Engagement</option>
+				<option key={uKey()}>Other</option>
+			</select>
       </Box>
 
-{/*
-      <div>
-        <label htmlFor="time">Select Time</label> <br></br>
-        <select id="time" required>
-          {finalTime}
-        </select>
-      </div>
 
-       <div>
-        <label htmlFor="occasion">Occasion</label> <br></br>
-        <select
-          id="occasion"
-          value={occasion}
-          onChange={(e) => setOccasion(e.target.value)}
-        >
-          <option>None</option>
-          <option>Birthday</option>
-          <option>Anniversary</option>
-          <option>Engagement</option>
-          <option>Other</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="preferences">Seating preferences</label> <br></br>
-        <select
-          id="preferences"
-          value={preferences}
-          onChange={(e) => setPreferences(e.target.value)}
-        >
-          <option>None</option>
-          <option>Indoors</option>
-          <option>Outdoor (Patio)</option>
-          <option>Outdoor (Sidewalk)</option>
-        </select>
-      </div>
-
-      <div>
-        <label htmlFor="comments">Additional Comments</label> <br></br>
-        <textarea
-          id="comments"
-          rows={8}
-          cols={50}
-          placeholder="Additional Comments"
-          value={comments}
-          onChange={(e) => setComments(e.target.value)}
-        ></textarea>
-      </div>
-*/}
       <Box className="rf-col-all">
+      
+        <hr></hr>
         <br></br>
-        <small>
-          <p>
-            Note: You cannot edit your reservation after submission. Please
-            double-check your answer before submitting your reservation request.
-          </p>
-        </small>
-        <Link onClick={scrollToTop} class="button-yellow fnt-2" to="/home/#" >Book Table</Link>
+			<Text className="fnt-2">Press the button below to complete your reservation.</Text>
+      <Text className="fnt-2">You will recieve a confirmation by email.</Text>
+			<Link onClick={(e) => submitReservation()} className="button-yellow fnt-2" to="/confirm" >Complete Reservation</Link>
+      <br></br>
+      <br></br>
       </Box>
 
     </form>

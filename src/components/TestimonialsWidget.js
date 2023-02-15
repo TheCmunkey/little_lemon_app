@@ -1,4 +1,4 @@
-import { Box, Text, Link, HStack } from "@chakra-ui/react";
+import { Box, Text, HStack } from "@chakra-ui/react";
 
 export default function TestimonialsWidget(props)
 {
@@ -6,16 +6,17 @@ export default function TestimonialsWidget(props)
 	return (
 
         <Box className="testimonials-widget">
-            <Text className="fnt-3"> rating </Text>
+            <Text Style="border-radius: 2px 2px 2px 2px;background-color: rgba(0,0,0,0.2);" className="fnt-5">
+            <center>⭐⭐⭐⭐⭐</center>
+           </Text>
             <Text className="fnt-B">-</Text>
 
-            <HStack>
-            <img className="testimonials-widget-rating" src={require("../assets/delivery_icon.png")} alt="food"></img>
-            <Text px="0.1rem" className="fnt-3">{props.name}</Text>
-            </HStack>
+           
+            <Text px="0.1rem" className="fnt-3"><center>{props.name}</center></Text>
+           
 
             <Text className="fnt-B">-</Text>
-            <Text className="fnt-3">This place sucks</Text>
+            <Text className="fnt-3"><center>{props.quote}</center></Text>
             <Text className="fnt-B">-</Text>
         </Box>
 
