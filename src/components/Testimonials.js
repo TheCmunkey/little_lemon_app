@@ -5,7 +5,7 @@ export default function Testimonials()
 {
 	return (
 		<Box className="testimonials">
-			<Box className="testimonials-div">
+			<section className="testimonials-div">
 				
 				<Box className="testimonials-div-top">
 				<hr></hr>
@@ -18,7 +18,7 @@ export default function Testimonials()
 				<Box ><TestimonialsWidget name="John"    quote='"I hate the place!"'/></Box>
 				<Box ><TestimonialsWidget name="Jessica" quote='"I hate the place!"'/></Box>
 
-			</Box>
+			</section>
 		</Box>
 	);
 };

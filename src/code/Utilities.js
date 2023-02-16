@@ -16,12 +16,26 @@ export function  uKey(name)
 	return(x);
 }
 
+
 export function NewlineText(props)
 {
-	var text = props.text;
-	var newText = text.split('\n').map(str => <Text key={uKey()} className={props.className}>{str}</Text>);
-	return newText;
+    if (typeof props.text === 'undefined')
+    {
+        return("ERROR: You did not assign a description string to function: NewlineText");
+    }
+
+    if(typeof props.className !== 'undefined')
+    {
+        return(props.text.split('\n').map(str => <Text key={uKey()} className={props.className}>{str}</Text>));
+    }
+    else
+    {
+        return(props.text.split('\n').map(str => <Text key={uKey()} >{str}</Text>));
+    }
+
 }
+
+
 export function pgTop()
 {
     window.scrollTo(0,0);
