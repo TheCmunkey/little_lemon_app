@@ -42,19 +42,19 @@ export default function ReservationForm(props)
     <Box className="reservation-form">
     <form className="reservation-form-container">
 
-      <Box className="rf-col-all">
+      <Box className="rf-col-top">
         <br></br>
-        <Text className="specials-logo-name fnt-2 " >🙞 RESERVATION FORM 🙜</Text>
-        <Text className="fnt-2">Fill out the information below.</Text>
-        <br></br>
-        <hr></hr>
+        <Text className="fnt-2-w">🙞 RESERVATION FORM 🙜</Text>
+        <Text className="fnt-2-w">Fill out the information below.</Text>
         <br></br>
       </Box>
-      
+
       <Box className="rf-col-1">
+        <br></br>
       <label className="fnt-2" htmlFor="firstName">First Name</label>
       </Box>
       <Box className="rf-col-2">
+        <br></br>
         <input
           className="fnt-2"
           type="text"
@@ -141,7 +141,7 @@ export default function ReservationForm(props)
       </Box>
       <Box className="rf-col-2">
         	<select
-				className="fnt-2"
+				className="fnt-2-w"
 				id="time"
 				required
 				value={time}
@@ -176,28 +176,27 @@ export default function ReservationForm(props)
       <Box className="rf-col-2">
 			<select
 				id="occasion"
-				className="fnt-2"
+				className="fnt-2-w"
 				value={occasion}
 				onChange={(e) => setOccasion(e.target.value)}
 			>
-				<option key={uKey()} >None</option>
-				<option key={uKey()}>Birthday</option>
-				<option key={uKey()}>Anniversary</option>
-				<option key={uKey()}>Engagement</option>
-				<option key={uKey()}>Other</option>
+				<option className="fnt-2-w" key={uKey()} >None</option>
+				<option className="fnt-2-w" key={uKey()}>Birthday</option>
+				<option className="fnt-2-w" key={uKey()}>Anniversary</option>
+				<option className="fnt-2-w" key={uKey()}>Engagement</option>
+				<option className="fnt-2-w" key={uKey()}>Other</option>
 			</select>
       </Box>
 
 
-      <Box className="rf-col-all">
-      
+      <Box className="rf-col-bot">
         <hr></hr>
-        <br></br>
-			<Text className="fnt-2">Press the button below to complete your reservation.</Text>
-      <Text className="fnt-2">You will recieve a confirmation by email.</Text>
-			<Link onClick={(e) => submitReservation()} className="button-yellow fnt-2" to="/confirm" >Complete Reservation</Link>
-      <br></br>
-      <br></br>
+        <Text className="fnt-B">-</Text>
+        <Text className="fnt-B">-</Text>
+        <Text className="fnt-2-w">Press the button below to complete your reservation.</Text>
+        <Text className="fnt-2-w">You will recieve a confirmation by email.</Text>
+        <Link onClick={(e) => submitReservation()} className="button-yellow fnt-2" to="/confirm" >Complete Reservation</Link>
+        <Text className="fnt-B">-</Text>
       </Box>
 
     </form>

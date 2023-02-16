@@ -1,5 +1,5 @@
 import { Text } from "@chakra-ui/react";
-import {  Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { NewlineText } from "../code/Utilities"
 
 
