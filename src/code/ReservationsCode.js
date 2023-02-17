@@ -18,7 +18,7 @@ export function getAvailableTimesAPI(date)
 		}
 	}// END  For i Loop
 
-	if(!availableTimes.length) availableTimes.push("Nothing Available That Day");
+	if(!availableTimes.length) availableTimes.push("That day is Full");
 
 	return(availableTimes);
 
