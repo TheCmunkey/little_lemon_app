@@ -9,9 +9,9 @@ export default function About(props)
 			<Box className="about-div">
 
 				<article className="about-div-1">
-				<Text className="fnt-2" >🙞 LITTLE LEMON 🙜</Text>
-				<br></br>
-				<NewlineText className="fnt-3" text={props.description} />
+					<Text className="fnt-2" >🙞 LITTLE LEMON 🙜</Text>
+					<br></br>
+					<NewlineText className="fnt-3" text={props.description} />
 				</article>
 
 				<Box className="about-div-2">
